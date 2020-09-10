@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    {% csrf_token %}
+      <div align =center>
+     <p>Hello {{nm}}, Your's Welcome</p>
+     <p>Leave Application Form</p>
+     <form name ="lv" action = "leave" method = "POST">
+         {% csrf_token %}
+         <table>
+             <tr>
+                 <td>Your id</td> 
+                 <td><input type = "text" name = "eid"></td>
+             </tr>
+             <tr>
+                <td>Your name</td> 
+                <td><input type = "text" name = "enm"></td>
+            </tr>
+            <tr>
+                <td>Your application</td> 
+                <td><input type = "text" name = "appli"></td>
+            </tr>
+            <tr>
+                <td>Leave From</td> 
+                <td><input type = "date" name = "LFrom" ></td>
+                <!-- data-date="" data-date-format="YYYY-MM-DD" placeholder="yyyy-mm-dd" value=""
+                min="1997-01-01" max="2030-12-31"> -->
+            </tr>
+            <tr>
+                <td>Leave till</td> 
+                <!--<td>Year<input type="text" name = toy> </td>-->
+                <td><input type = "date" name = "Ltill" ></td>
+            </tr>
+            <tr>
+                <td><input type = "submit"></td>
+            </tr>
+         </table>
+     </form>
+    </div>
+    {% endblock %}
+</body>
+</html>
